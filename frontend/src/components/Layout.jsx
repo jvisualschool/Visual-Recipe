@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback, useState } from 'react';
 import useRecipeStore from '../store/recipeStore';
-import { Moon, Sun, Globe, LogOut, X, Github } from 'lucide-react';
+import { Moon, Sun, Globe, LogOut, X, Github, Smile } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { translations } from '../lib/translations';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -265,10 +265,10 @@ const Layout = ({ children }) => {
                         </a>
                         <button
                             onClick={() => setShowSplash(true)}
-                            className="text-2xl hover:scale-110 transition-transform"
+                            className="hover:text-primary transition cursor-pointer"
                             title="About CHEF"
                         >
-                            😊
+                            <Smile size={16} />
                         </button>
                     </div>
                 </div>
