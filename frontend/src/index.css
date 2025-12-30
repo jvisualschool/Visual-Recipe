@@ -1,0 +1,325 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--theme-primary);
+  --color-primary-dark: var(--theme-secondary);
+  --color-bg-main: var(--theme-bg);
+  --color-text-main: var(--theme-text);
+  --color-surface: var(--theme-surface);
+  --color-border-main: var(--theme-border);
+
+  --font-sans: var(--theme-font), 'Inter', system-ui, sans-serif;
+
+  --radius-theme: var(--theme-radius);
+}
+
+:root {
+  /* Default: Dark Brown */
+  --theme-bg: #0c0a09;
+  --theme-text: #fafaf9;
+  --theme-primary: #d97706;
+  --theme-secondary: #b45309;
+  --theme-surface: #1c1917;
+  --theme-border: rgba(255, 255, 255, 0.1);
+  --theme-font: 'Inter';
+  --theme-radius: 1rem;
+  --theme-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --theme-button-radius: 9999px;
+}
+
+/* Pixel GUI 테마 - 제일 앞에 추가 */
+.pixel-gui {
+  --theme-bg: #c0c0c0;
+  --theme-text: #000000;
+  --theme-primary: #000080;
+  --theme-secondary: #0000ff;
+  --theme-surface: #ffffff;
+  --theme-border: #000000;
+  --theme-font: 'DungGeunMo';
+  --theme-radius: 0px;
+  --theme-shadow: 3px 3px 0px #000000;
+  --theme-button-radius: 0px;
+}
+
+.dark-brown {
+  --theme-bg: #0c0a09;
+  --theme-text: #fafaf9;
+  --theme-primary: #d97706;
+  --theme-secondary: #b45309;
+  --theme-surface: #1c1917;
+  --theme-border: rgba(255, 255, 255, 0.1);
+  --theme-font: 'Inter';
+  --theme-radius: 12px;
+  --theme-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --theme-button-radius: 8px;
+}
+
+.pink-check {
+  --theme-bg: #fff1f2;
+  --theme-text: #4c0519;
+  --theme-primary: #f43f5e;
+  --theme-secondary: #fb7185;
+  --theme-surface: #ffffff;
+  --theme-border: #fecdd3;
+  --theme-font: 'YeogiOttaeJalnan';
+  --theme-radius: 24px;
+  --theme-shadow: 0 10px 15px -3px rgba(244, 63, 94, 0.1);
+  --theme-button-radius: 24px;
+}
+
+.colored-pencil {
+  --theme-bg: #fdfcf0;
+  --theme-text: #1e1b4b;
+  --theme-primary: #6366f1;
+  --theme-secondary: #8b5cf6;
+  --theme-surface: #ffffff;
+  --theme-border: #312e81;
+  /* Darker border for pencil look */
+  --theme-font: 'GyeongbokgungSumunjang';
+  --theme-radius: 4px;
+  /* More organic, less perfect */
+  --theme-shadow: 4px 4px 0px rgba(99, 102, 241, 0.2);
+  --theme-button-radius: 2px;
+}
+
+.matcha-green {
+  --theme-bg: #f0fdf4;
+  --theme-text: #064e3b;
+  --theme-primary: #10b981;
+  --theme-secondary: #059669;
+  --theme-surface: #ecfdf5;
+  --theme-border: #d1fae5;
+  --theme-font: 'Inter';
+  --theme-radius: 30px;
+  --theme-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.1);
+  --theme-button-radius: 30px;
+}
+
+.lemon-zest {
+  --theme-bg: #fffbeb;
+  --theme-text: #451a03;
+  --theme-primary: #facc15;
+  --theme-secondary: #eab308;
+  --theme-surface: #ffffff;
+  --theme-border: #fef3c7;
+  --theme-font: 'TmoneyRoundWindExtraBold';
+  --theme-radius: 0px;
+  --theme-shadow: 10px 10px 0px #facc15;
+  --theme-button-radius: 0px;
+}
+
+.midnight-blue {
+  --theme-bg: #020617;
+  --theme-text: #f8fafc;
+  --theme-primary: #38bdf8;
+  --theme-secondary: #0ea5e9;
+  --theme-surface: rgba(15, 23, 42, 0.8);
+  --theme-border: rgba(255, 255, 255, 0.1);
+  --theme-font: 'Inter';
+  --theme-radius: 16px;
+  --theme-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+  --theme-button-radius: 12px;
+}
+
+.christmas {
+  --theme-bg: #eaeff2;
+  --theme-text: #164e63;
+  --theme-primary: #ef4444;
+  --theme-secondary: #10b981;
+  --theme-surface: rgba(255, 255, 255, 0.9);
+  --theme-border: #fca5a5;
+  --theme-font: 'Quicksand';
+  --theme-radius: 20px;
+  --theme-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.1);
+  --theme-button-radius: 9999px;
+}
+
+body {
+  font-family: var(--theme-font), sans-serif;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  @apply transition-colors duration-300;
+}
+
+/* Force headings to inherit theme font */
+h1,
+h2,
+h3,
+.font-sans {
+  font-family: var(--theme-font), sans-serif !important;
+}
+
+/* Specific UI Element Styles based on variables */
+.rounded-theme {
+  border-radius: var(--theme-radius);
+}
+
+.button-theme {
+  border-radius: var(--theme-button-radius);
+  box-shadow: var(--theme-shadow);
+}
+
+.shadow-theme {
+  box-shadow: var(--theme-shadow);
+}
+
+/* Specific component styles for themes */
+html.pink-check,
+html.pink-check body {
+  background-color: #fff1f2 !important;
+  background-image:
+    linear-gradient(45deg, rgba(251, 113, 133, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(251, 113, 133, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(251, 113, 133, 0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(251, 113, 133, 0.1) 75%) !important;
+  background-size: 40px 40px !important;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px !important;
+}
+
+html.lemon-zest,
+html.lemon-zest body {
+  background-color: #fffbeb !important;
+  background-image: radial-gradient(rgba(250, 204, 21, 0.35) 4px, transparent 4px) !important;
+  background-size: 35px 35px !important;
+}
+
+html.colored-pencil,
+html.colored-pencil body {
+  background-color: #fdfcf0 !important;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+    url("https://www.transparenttextures.com/patterns/natural-paper.png") !important;
+  background-size: 20px 20px, 20px 20px, auto !important;
+}
+
+html.christmas,
+html.christmas body {
+  background-color: #eaeff2 !important;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ef4444' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM24 30V24h-2v6h-6v2h6v6h2v-6h6v-2h-6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(circle at 10% 10%, rgba(239, 68, 68, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 90%, rgba(16, 185, 129, 0.05) 0%, transparent 20%) !important;
+}
+
+html.lemon-zest nav {
+  border-bottom: 4px solid var(--theme-primary);
+}
+
+.midnight-blue .backdrop-blur-md {
+  backdrop-filter: blur(20px);
+}
+
+/* Pixel GUI 테마 - 투박한 레트로 스타일 */
+html.pixel-gui,
+html.pixel-gui body {
+  background-color: #008080 !important;
+  font-family: 'DungGeunMo', monospace !important;
+}
+
+/* 네비게이션 바 - 클래식 메뉴바 스타일 */
+html.pixel-gui nav {
+  background: #c0c0c0 !important;
+  border-bottom: 3px solid #000000 !important;
+  box-shadow: inset -1px -1px 0px #808080, inset 1px 1px 0px #ffffff !important;
+  backdrop-filter: none !important;
+}
+
+/* 모든 카드/박스 - 투박한 3D 효과 */
+html.pixel-gui .bg-surface,
+html.pixel-gui [class*="rounded"] {
+  background: #c0c0c0 !important;
+  border: 3px solid #000000 !important;
+  border-radius: 0 !important;
+  box-shadow:
+    inset -2px -2px 0px #808080,
+    inset 2px 2px 0px #ffffff,
+    4px 4px 0px #000000 !important;
+}
+
+/* 버튼 - 클래식 Windows 스타일 */
+html.pixel-gui button {
+  background: #c0c0c0 !important;
+  border: 3px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  border-radius: 0 !important;
+  box-shadow: 1px 1px 0px #000000 !important;
+  font-family: 'DungGeunMo', monospace !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+html.pixel-gui button:hover {
+  background: #dfdfdf !important;
+}
+
+html.pixel-gui button:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 2px #808080 !important;
+}
+
+/* Primary 버튼 */
+html.pixel-gui button.bg-primary,
+html.pixel-gui .bg-primary {
+  background: #000080 !important;
+  color: #ffffff !important;
+  border-color: #0000ff #000040 #000040 #0000ff !important;
+}
+
+html.pixel-gui button.bg-primary:hover {
+  background: #0000a0 !important;
+}
+
+/* 입력 필드 */
+html.pixel-gui input,
+html.pixel-gui select,
+html.pixel-gui textarea {
+  background: #ffffff !important;
+  border: 2px solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  border-radius: 0 !important;
+  font-family: 'DungGeunMo', monospace !important;
+  box-shadow: inset 1px 1px 2px #808080 !important;
+}
+
+/* 선택 옵션 버튼 */
+html.pixel-gui .grid button,
+html.pixel-gui [class*="gap-"] button {
+  padding: 8px 16px !important;
+}
+
+/* 헤딩 스타일 */
+html.pixel-gui h1,
+html.pixel-gui h2,
+html.pixel-gui h3 {
+  font-family: 'DungGeunMo', monospace !important;
+  text-shadow: 2px 2px 0px #808080;
+}
+
+/* 윈도우 타이틀바 느낌의 헤더 */
+html.pixel-gui .text-primary {
+  color: #000080 !important;
+}
+
+/* 체크박스/라디오 스타일 */
+html.pixel-gui input[type="checkbox"],
+html.pixel-gui input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+html.pixel-gui input[type="checkbox"]:checked,
+html.pixel-gui input[type="radio"]:checked {
+  background: #000080;
+}
+
+/* 푸터 스타일 */
+html.pixel-gui footer {
+  background: #c0c0c0 !important;
+  border-top: 3px solid #000000 !important;
+  box-shadow: inset 0 2px 0px #ffffff !important;
+}

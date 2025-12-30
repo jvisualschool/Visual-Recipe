@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe App Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050511;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen items-center justify-center p-4">
+
+    <!-- Header -->
+    <header class="text-center mb-16 space-y-4">
+        <h1 class="text-5xl md:text-7xl font-black tracking-tighter">
+            <span class="text-blue-400">Vibe</span> <span class="text-white">App</span> <span
+                class="text-teal-400">Gallery</span>
+        </h1>
+        <p class="text-gray-500 font-bold tracking-widest text-lg">#100d100d 2026</p>
+        <p class="text-gray-600 text-xs tracking-[0.2em] font-medium pt-4">EXPLORE THE UNIVERSE OF CODE</p>
+    </header>
+
+    <!-- Grid -->
+    <main class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl w-full">
+
+        <!-- Card 1: KIRO (Unlinked) -->
+        <div
+            class="bg-slate-900/50 border border-slate-800 rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:bg-slate-900 transition hover:border-slate-700 aspect-video group cursor-not-allowed opacity-70">
+            <div class="text-xs font-bold text-gray-500 mb-2 tracking-widest">PROJECT</div>
+            <h2 class="text-2xl font-bold mb-4">KIRO Gallery</h2>
+            <div class="flex items-center gap-2 text-yellow-500 text-xs font-bold">
+                <span class="w-2 h-2 bg-yellow-500 rounded-full"></span> UNDER DEVELOPMENT
+            </div>
+        </div>
+
+        <!-- Card 2: Antigravity Gallery (Linked to /APP_GALLERY_AG/) -->
+        <!-- NOTE: The 'Chef' app is currently at /CHEF/. If you want Chef TO BE this gallery, we should move files. -->
+        <a href="/APP_GALLERY_AG/"
+            class="bg-slate-900/50 border border-slate-800 rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:bg-slate-800 transition hover:border-blue-500/50 aspect-video group cursor-pointer hover:shadow-2xl hover:shadow-blue-900/20">
+            <div class="text-xs font-bold text-gray-500 mb-2 tracking-widest group-hover:text-blue-400 transition">
+                PROJECT</div>
+            <h2 class="text-3xl font-bold mb-4 text-white group-hover:text-blue-200 transition">Antigravity Gallery</h2>
+            <div class="flex items-center gap-2 text-green-400 text-xs font-bold animate-pulse">
+                <span class="w-2 h-2 bg-green-400 rounded-full"></span> ACTIVE
+            </div>
+        </a>
+
+        <!-- Card 3: Cursor (Unlinked) -->
+        <div
+            class="bg-slate-900/50 border border-slate-800 rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:bg-slate-900 transition hover:border-slate-700 aspect-video group cursor-not-allowed opacity-70">
+            <div class="text-xs font-bold text-gray-500 mb-2 tracking-widest">PROJECT</div>
+            <h2 class="text-2xl font-bold mb-4">Cursor Gallery</h2>
+            <div class="flex items-center gap-2 text-yellow-500 text-xs font-bold">
+                <span class="w-2 h-2 bg-yellow-500 rounded-full"></span> UNDER DEVELOPMENT
+            </div>
+        </div>
+
+        <!-- Card 4: AWS -->
+        <a href="/AWS/"
+            class="bg-slate-900/50 border border-slate-800 rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:bg-slate-900 transition hover:border-slate-700 aspect-video group">
+            <div class="text-xs font-bold text-gray-500 mb-2 tracking-widest">INFRASTRUCTURE</div>
+            <h2 class="text-2xl font-bold mb-4 text-white">AWS</h2>
+            <div class="flex items-center gap-2 text-green-400 text-xs font-bold">
+                <span class="w-2 h-2 bg-green-400 rounded-full"></span> ACTIVE
+            </div>
+        </a>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 text-gray-600 text-xs font-medium tracking-wide">
+        © 2026 Jvibeschool.org | Jinho Jung | All Systems Operational
+    </footer>
+
+</body>
+
+</html>

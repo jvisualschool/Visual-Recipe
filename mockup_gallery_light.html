@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Chef - Gallery Mockup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
+
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 min-h-screen">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2 font-bold text-xl tracking-tight">
+                <div class="w-8 h-8 bg-black text-white rounded-lg flex items-center justify-center">V</div>
+                Visual Chef Grid
+            </div>
+
+            <div class="flex-1 max-w-md mx-8 hidden md:block">
+                <div class="relative group">
+                    <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4"></i>
+                    <input type="text" placeholder="Search recipes (e.g. Pasta, Kimchi)..."
+                        class="w-full bg-gray-100 hover:bg-gray-200 focus:bg-white border-transparent focus:border-black rounded-xl py-2 pl-10 pr-4 text-sm transition outline-none border">
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button class="p-2 hover:bg-gray-100 rounded-full transition"><i data-lucide="bell"
+                        class="w-5 h-5"></i></button>
+                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 to-red-500"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gallery Content -->
+    <main class="max-w-7xl mx-auto p-6">
+
+        <!-- Filters -->
+        <div class="flex gap-2 overflow-x-auto pb-6 scrollbar-hide">
+            <button
+                class="bg-black text-white px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap">All</button>
+            <button
+                class="bg-white border border-gray-200 hover:border-gray-400 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition">🇰🇷
+                Korean</button>
+            <button
+                class="bg-white border border-gray-200 hover:border-gray-400 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition">🇮🇹
+                Western</button>
+            <button
+                class="bg-white border border-gray-200 hover:border-gray-400 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition">🧊
+                Fridge Rescue</button>
+            <button
+                class="bg-white border border-gray-200 hover:border-gray-400 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition">💸
+                Budget</button>
+        </div>
+
+        <!-- Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[200px]">
+
+            <!-- Card 1: Large Featured (Vertical) -->
+            <div
+                class="group relative row-span-2 col-span-1 md:col-span-2 rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition duration-300">
+                <img src="https://placehold.co/600x800/orange/white?text=Gimbap+Infographic" alt="Gimbap"
+                    class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition">
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold">Classic Gimbap</h3>
+                        <p class="text-sm opacity-90"><i data-lucide="layers" class="inline w-3 h-3"></i> 3-Step
+                            Infographic</p>
+                    </div>
+                </div>
+                <div
+                    class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-sm">
+                    Top Pick 🔥
+                </div>
+            </div>
+
+            <!-- Card 2: Square -->
+            <div class="group relative rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-lg transition">
+                <img src="https://placehold.co/400x400/22c55e/white?text=Avocado+Toast" alt="Food"
+                    class="w-full h-full object-cover">
+                <div
+                    class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-xl text-sm font-bold shadow-sm flex items-center gap-1">
+                    🥑 5 min
+                </div>
+            </div>
+
+            <!-- Card 3: Square -->
+            <div class="group relative rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-lg transition">
+                <img src="https://placehold.co/400x400/3b82f6/white?text=Blueberry+Pancake" alt="Food"
+                    class="w-full h-full object-cover">
+                <button
+                    class="absolute bottom-3 right-3 p-2 bg-white rounded-full shadow hover:scale-110 transition text-red-500">
+                    <i data-lucide="heart" class="w-4 h-4 fill-current"></i>
+                </button>
+            </div>
+
+            <!-- Card 4: Horizontal (Span 2) -->
+            <div
+                class="group relative col-span-1 md:col-span-2 rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-lg transition">
+                <img src="https://placehold.co/600x300/f43f5e/white?text=Spicy+Tteokbokki+Flow" alt="Food"
+                    class="w-full h-full object-cover">
+                <div class="absolute bottom-0 w-full p-6 bg-gradient-to-t from-black/50 to-transparent text-white">
+                    <h3 class="font-bold text-lg">Street Style Tteokbokki</h3>
+                    <div class="flex gap-2 text-xs mt-1 opacity-80">
+                        <span>#Spicy</span> <span>#KoreanSoulFood</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Text Only Info -->
+            <div
+                class="rounded-3xl bg-yellow-400 p-6 flex flex-col justify-between hover:rotate-1 transition cursor-pointer">
+                <div>
+                    <h3 class="font-black text-3xl leading-none mb-2">BUDGET<br>BITES</h3>
+                    <p class="font-medium opacity-80">Under ₩5,000</p>
+                </div>
+                <div class="self-end bg-black text-white px-4 py-2 rounded-full text-sm font-bold">
+                    View 24 Recipes ➔
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
