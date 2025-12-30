@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback, useState } from 'react';
 import useRecipeStore from '../store/recipeStore';
-import { Moon, Sun, Globe, LogOut, X } from 'lucide-react';
+import { Moon, Sun, Globe, LogOut, X, Github } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { translations } from '../lib/translations';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +8,47 @@ import { faMagic, faImage } from '@fortawesome/free-solid-svg-icons';
 import { authApi } from '../lib/api';
 
 const Layout = ({ children }) => {
+    // ... (중략) ...
+    {/* Footer */ }
+    <footer className="py-8 border-t border-border-main bg-bg-main text-center">
+        <div className="flex flex-col items-center gap-4">
+
+            <p className="text-text-main/50 text-xs">
+                © 2026 Visual Chef. All rights reserved.
+            </p>
+            <div className="flex gap-4 text-xs text-text-main/40 items-center">
+                <a
+                    href="https://github.com/jvisualschool/Visual-Recipe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition cursor-pointer"
+                    title="GitHub Repository"
+                >
+                    <Github size={16} />
+                </a>
+                <a
+                    href="https://jvibeschool.org/GALLERY/mdview.html?url=https%3A%2F%2Fjvibeschool.org%2FCHEF%2FREADME.md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition cursor-pointer"
+                >
+                    README
+                </a>
+                <span onClick={() => navigate('/privacy')} className="hover:text-primary transition cursor-pointer">Privacy Policy</span>
+                <span onClick={() => navigate('/terms')} className="hover:text-primary transition cursor-pointer">Terms of Service</span>
+                <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition decoration-dotted underline underline-offset-4">
+                    Google API Key
+                </a>
+                <button
+                    onClick={() => setShowSplash(true)}
+                    className="text-2xl hover:scale-110 transition-transform"
+                    title="About CHEF"
+                >
+                    😊
+                </button>
+            </div>
+        </div>
+    </footer>
     const { config, setTheme, setConfig, language, toggleLanguage, user, setUser, logout } = useRecipeStore();
     const navigate = useNavigate();
     const location = useLocation();
@@ -200,6 +241,15 @@ const Layout = ({ children }) => {
                         © 2026 Visual Chef. All rights reserved.
                     </p>
                     <div className="flex gap-4 text-xs text-text-main/40 items-center">
+                        <a
+                            href="https://github.com/jvisualschool/Visual-Recipe"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-primary transition cursor-pointer"
+                            title="GitHub Repository"
+                        >
+                            <Github size={16} />
+                        </a>
                         <a
                             href="https://jvibeschool.org/GALLERY/mdview.html?url=https%3A%2F%2Fjvibeschool.org%2FCHEF%2FREADME.md"
                             target="_blank"
