@@ -13,6 +13,9 @@ frontend/node_modules/
 frontend/.env
 backend/api/secrets.php
 backend/api/config.php
+backend/api/db.php
+
+server_config.json
 
 # Security Keys
 *.pem

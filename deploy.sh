@@ -5,13 +5,26 @@
 # ==========================================
 
 # 1. Server Configuration (from server_config.json)
-SERVER_IP="15.164.161.165"
-SSH_USER="bitnami"
-SSH_KEY="/Users/jinhojung/.ssh/jvibeschool_org.pem"
-REMOTE_WEB_ROOT="/opt/bitnami/apache/htdocs/CHEF"
+# 1. Server Configuration (from server_config.json)
+CONFIG_FILE="server_config.json"
+
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "❌ Error: $CONFIG_FILE not found. Please create it from server_config.example.json"
+    exit 1
+fi
+
+SERVER_IP=$(jq -r '.server_ip' $CONFIG_FILE)
+SSH_USER=$(jq -r '.ssh_user' $CONFIG_FILE)
+SSH_KEY_RAW=$(jq -r '.ssh_key_path' $CONFIG_FILE)
+SSH_KEY="${SSH_KEY_RAW/\~/$HOME}"
+REMOTE_WEB_ROOT_BASE=$(jq -r '.remote_web_root' $CONFIG_FILE)
+# Ensure trailing slash and append CHEF
+REMOTE_WEB_ROOT_BASE="${REMOTE_WEB_ROOT_BASE%/}/"
+REMOTE_WEB_ROOT="${REMOTE_WEB_ROOT_BASE}CHEF"
+
 REMOTE_BACKUP_ROOT="/home/bitnami/backups_chef"
 DB_USER="root"
-DB_PASS="REDACTED"
+DB_PASS=$(jq -r '.mysql_root_password' $CONFIG_FILE)
 DB_NAME="bitnami_app"
 
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
